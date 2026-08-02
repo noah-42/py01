@@ -1,0 +1,15 @@
+# Type checking
+.mypy_cache/
+.pyre/
+.ruff_cache/
+
+# Bytecode / caches
+__pycache__/
+*.py[cod]
+
+# Virtual envs
+venv/
+.venv/
+
+# OS noise
+.DS_Store
