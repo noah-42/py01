@@ -1,5 +1,5 @@
 class Plant:
-    def __init__(self, name, height_cm, age_days, growth_rate):
+    def __init__(self, name: str, height_cm: float, age_days: int, growth_rate: float) -> None:
         self.name = name
         self.height_cm = height_cm
         self.age_days = age_days
@@ -11,11 +11,11 @@ class Plant:
     def grow(self):
         self.height_cm += self.growth_rate
 
-    def age_day_older(self):
+    def age_one_day_older(self):
         self.age_days += 1
 
 
-def main():
+def ft_plant_growth():
     rose = Plant("Rose", 25.0, 30, 0.8)
 
     print("=== Garden Plant Growth ===")
@@ -25,7 +25,7 @@ def main():
 
     for day in range(1, 8):
         rose.grow()
-        rose.age_day_older()
+        rose.age_one_day_older()
         print(f"=== Day {day} ===")
         rose.show()
 
@@ -33,4 +33,4 @@ def main():
     print(f"Growth this week: {round(total_growth, 1)}cm")
 
 if __name__ == "__main__":
-    main()
+    ft_plant_growth()
