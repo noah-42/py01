@@ -14,7 +14,6 @@ class Plant:
             return False
         return True
 
-
     def get_height(self):
         return self._height
 
