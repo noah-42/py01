@@ -177,7 +177,7 @@ def display_statistics(plant):
     plant.show_stats()
 
 
-def main():
+def ft_garden_analytics() -> None:
     print("=== Garden statistics ===")
 
     print("=== Check year-old")
@@ -223,4 +223,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    ft_garden_analytics()

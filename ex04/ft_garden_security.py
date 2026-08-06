@@ -45,7 +45,7 @@ class Plant:
         return f"{self._name}: {self._height_cm}cm, {self._age_days} days old"
 
 
-def ft_plant_security():
+def ft_plant_security() -> None:
     print("=== Garden Security System ===")
     rose = Plant("Rose", 15.0, 10, 0.1)
     print()

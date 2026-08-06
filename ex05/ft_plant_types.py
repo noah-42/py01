@@ -99,7 +99,7 @@ class Vegetable(Plant):
         print(f" Nutritional value: {self._nutritional_value}")
 
 
-def main():
+def ft_plant_types() -> None:
     print("=== Garden Plant Types ===")
 
     print("=== Flower")
@@ -127,4 +127,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    ft_plant_types()

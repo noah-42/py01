@@ -1,4 +1,4 @@
-def garden_intro() -> None:
+def ft_garden_intro() -> None:
     plant_name = "Rose"
     height = 25
     age = 30
