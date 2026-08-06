@@ -1,5 +1,5 @@
 class Plant:
-    def __init__(self, name: str, height_cm: float, 
+    def __init__(self, name: str, height_cm: float,
                  age_days: int, growth_rate: float) -> None:
         self.name = name
         self.height_cm = height_cm
@@ -35,6 +35,7 @@ def ft_plant_growth() -> None:
 
     total_growth = rose.height_cm - starting_height
     print(f"Growth this week: {round(total_growth, 1)}cm")
+
 
 if __name__ == "__main__":
     ft_plant_growth()
