@@ -1,19 +1,19 @@
 class Plant:
     def __init__(self, name: str, height_cm: float,
                  age_days: int, growth_rate: float) -> None:
-        self._name = name
+        self.name = name
         self._height_cm = 0.0
         self._age_days = 0
-        self._growth_rate = growth_rate
+        self.growth_rate = growth_rate
 
         if height_cm < 0:
-            print(f"{self._name}: Error, height can't be negative")
+            print(f"{self.name}: Error, height can't be negative")
             print("Using default height: 0.0cm")
         else:
             self._height_cm = float(height_cm)
 
         if age_days < 0:
-            print(f"{self._name}: Error, age can't be negative")
+            print(f"{self.name}: Error, age can't be negative")
             print("Using default age: 0 days")
         else:
             self._age_days = age_days
@@ -28,7 +28,7 @@ class Plant:
 
     def set_height(self, height_cm):
         if height_cm < 0:
-            print(f"{self._name}: Error, height can't be negative")
+            print(f"{self.name}: Error, height can't be negative")
             print("Height update rejected")
             return
         self._height_cm = float(height_cm)
@@ -36,14 +36,14 @@ class Plant:
 
     def set_age(self, age_days):
         if age_days < 0:
-            print(f"{self._name}: Error, age can't be negative")
+            print(f"{self.name}: Error, age can't be negative")
             print("Age update rejected")
             return
         self._age_days = age_days
         print(f"Age updated: {self._age_days} days")
 
     def __str__(self):
-        return f"{self._name}: {self._height_cm}cm, {self._age_days} days old"
+        return f"{self.name}: {self._height_cm}cm, {self._age_days} days old"
 
 
 def ft_plant_security() -> None:

@@ -1,6 +1,7 @@
 class Plant:
-    def __init__(self, name, height=0.0, age=0):
-        self._name = name
+    def __init__(self, name: str, height: float,
+                 age: int) -> None:
+        self.name = name
         self._height = 0.0
         self._age = 0
         if self._validate_non_negative(height, "height"):

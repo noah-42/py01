@@ -1,34 +1,11 @@
 class Plant:
-    class Stats:
-        def __init__(self):
-            self._grow_count = 0
-            self._age_count = 0
-            self._show_count = 0
-
-        def record_grow(self):
-            self._grow_count += 1
-
-        def record_age(self):
-            self._age_count += 1
-
-        def record_show(self):
-            self._show_count += 1
-
-        def display(self):
-            print(
-                f"Stats: {self._grow_count} grow, "
-                f"{self._age_count} age, {self._show_count} show"
-            )
-
-    def __init__(self, name, height=0.0, age=0):
-        self._name = name
+    def __init__(self, name: str, height=0.0, age=0):
+        self.name = name
         self._height = 0.0
         self._age = 0
         self._stats = self._create_stats()
-
         if self._validate_non_negative(height, "height"):
             self._height = float(height)
-
         if self._validate_non_negative(age, "age"):
             self._age = age
 
@@ -37,12 +14,12 @@ class Plant:
 
     def _validate_non_negative(self, value, field_name):
         if value < 0:
-            print(f"{self._name}: Error, {field_name} can't be negative")
+            print(f"{self.name}: Error, {field_name} can't be negative")
             return False
         return True
 
     def get_name(self):
-        return self._name
+        return self.name
 
     def get_height(self):
         return self._height
@@ -73,7 +50,7 @@ class Plant:
         self._stats.record_age()
 
     def show(self):
-        print(f"{self._name}: {self._height}cm, {self._age} days old")
+        print(f"{self.name}: {self._height}cm, {self._age} days old")
         self._stats.record_show()
 
     def show_stats(self):
@@ -86,6 +63,27 @@ class Plant:
     @classmethod
     def create_anonymous(cls):
         return cls("Unknown plant", 0.0, 0)
+
+    class Stats:
+        def __init__(self):
+            self._grow_count = 0
+            self._age_count = 0
+            self._show_count = 0
+
+        def record_grow(self):
+            self._grow_count += 1
+
+        def record_age(self):
+            self._age_count += 1
+
+        def record_show(self):
+            self._show_count += 1
+
+        def display(self):
+            print(
+                f"Stats: {self._grow_count} grow, "
+                f"{self._age_count} age, {self._show_count} show"
+            )
 
 
 class Flower(Plant):
@@ -101,9 +99,9 @@ class Flower(Plant):
         super().show()
         print(f" Color: {self._color}")
         if self._bloomed:
-            print(f" {self._name} is blooming beautifully!")
+            print(f" {self.name} is blooming beautifully!")
         else:
-            print(f" {self._name} has not bloomed yet")
+            print(f" {self.name} has not bloomed yet")
 
 
 class Tree(Plant):
@@ -128,7 +126,7 @@ class Tree(Plant):
 
     def produce_shade(self):
         print(
-            f" Tree {self._name} now produces a shade of "
+            f" Tree {self.name} now produces a shade of "
             f" {self._height}cm long and {self._trunk_diameter}cm wide."
         )
         self._stats.record_shade()
